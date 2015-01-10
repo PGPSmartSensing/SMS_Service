@@ -4,6 +4,7 @@
   "description": "SMS Service for PGP Smart Sensing Architecture",
   "main": "server.js",
   "scripts": {
+    "start": "node app",
     "test": "nodeunit ./test/test.js"
   },
   "repository": {
