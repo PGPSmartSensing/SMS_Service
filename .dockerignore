@@ -1,0 +1,4 @@
+.git
+.dockerignore
+.ebextensions
+node_modules
