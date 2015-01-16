@@ -2,12 +2,13 @@ FROM ubuntu
 MAINTAINER Louis Borsu <sat@satprod.net>
  
 # install our dependencies and nodejs
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+# RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get -y install python-software-properties git build-essential
-RUN add-apt-repository -y ppa:chris-lea/node.js
+RUN apt-get install -y software-properties-common python-software-properties git build-essential
+RUN apt-add-repository -y ppa:chris-lea/node.js
 RUN apt-get update
-RUN apt-get -y install nodejs
+# RUN apt-get update
+RUN apt-get install -y nodejs
  
 # use changes to package.json to force Docker not to use the cache
 # when we change our application's nodejs dependencies:
@@ -22,4 +23,4 @@ ADD . /opt/app
  
 EXPOSE 3000
  
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
